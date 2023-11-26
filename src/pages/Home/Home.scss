@@ -1,0 +1,109 @@
+// Define colors and fonts
+$white: #fff;
+$background-pink: #f8c8dc;
+$font-stack: "Helvetica", sans-serif;
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .col1 {
+        background-image: url("/../public/candy2.webp");
+
+        height: max-content;
+        object-fit: cover;
+        background-size: cover;
+        background-position: center center;
+        width: 100%;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        margin: 0;
+        .description {
+            width: 100%;
+            background-color: #ffffff;
+            margin: auto;
+            padding: 10px;
+            height: 300px;
+            width: 300px;
+            color: #282828;
+            border-radius: 50%;
+            display: grid;
+            grid-template-rows: 40% 10% auto;
+            grid-template-columns: auto;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+            font-family: "Vina Sans", sans-serif;
+            border: 10px solid rgba(255, 192, 203, 0.457);
+            h1,
+            h2 {
+                height: fit-content;
+                text-align: center;
+                grid-area: "header";
+                font-weight: 900;
+                font-size: 70px;
+                color: orange;
+                text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.435);
+                justify-self: flex-end;
+                margin: auto;
+                margin-top: auto;
+            }
+            h2 {
+                font-size: 20px;
+                font-weight: 700;
+                text-shadow: 2px 2px 0 rgba(29, 27, 28, 0.507);
+            }
+            p {
+                width: 70%;
+                margin: auto;
+                text-align: center;
+                margin-bottom: auto;
+                height: fit-content;
+                grid-area: "para";
+                font-weight: 500;
+                opacity: 0.8;
+            }
+        }
+    }
+}
+.home--dark-theme {
+    background-color: $background-pink;
+    color: #fff;
+}
+.home--light-theme {
+    $background-color: #fff;
+    color: #282828;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .App {
+        grid-template-rows: 50px auto 200px;
+        grid-template-columns: auto;
+        grid-template-areas:
+            "top"
+            "main"
+            "bottom";
+    }
+    main > h1,
+    h2 {
+        max-width: 90%;
+        text-align: center;
+    }
+    .search-wrapper {
+        width: 80%;
+    }
+}

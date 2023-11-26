@@ -1,0 +1,80 @@
+.modal-container {
+    width: auto; // Changed to auto to accommodate table width
+    min-width: 300px;
+    max-width: 90%; // Max width to prevent too wide a table
+    height: fit-content;
+    overflow-x: auto; // Allows horizontal scrolling for the table
+    background-color: pink; // Using your pink color
+    display: flex;
+    padding: 20px;
+    border: 2px solid rgba(245, 245, 245, 0.231);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 200;
+    transform: translate(0, 3%);
+    top: 100%;
+    transition: all 0.3s ease-in-out;
+    border-radius: 20px;
+
+    box-shadow:
+        rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    left: 0;
+
+    h2 {
+        font-size: 22px;
+        color: tomato;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        thead {
+            tr {
+                th {
+                    padding: 10px;
+                    background-color: orange;
+                    color: white;
+                    border-bottom: 1px solid #ddd;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                &:hover {
+                    background-color: rgba(255, 0, 0, 0.218);
+                }
+
+                td {
+                    padding: 10px;
+                    border-bottom: 1px solid #ddd;
+                    text-align: left;
+                    color: black;
+
+                    // Style for the delete icon in each row
+                    .modal-list__delete {
+                        color: red;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: tomato;
+                            transform: rotateZ(0.03turn);
+                            transition: transform 0.2s ease-in;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Additional styling for when there are no products
+    .no-product {
+        text-align: center;
+        color: #666;
+        margin-top: 20px;
+    }
+}

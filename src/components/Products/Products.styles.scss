@@ -1,0 +1,35 @@
+// Define colors and fonts
+$white: rgb(87, 65, 24);
+$background-pink: #f8c8dc;
+$font-stack: "Helvetica", sans-serif;
+
+// Styling for the product section
+.product-section {
+    background-color: $background-pink;
+    color: $white;
+    font-family: $font-stack;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .product-card {
+        border: 2px solid $white;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 16px;
+        text-align: center;
+        width: 25%;
+
+        object-fit: cover;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            max-height: 200px;
+        }
+        &:hover {
+            background-color: lighten($background-pink, 10%);
+        }
+    }
+}
